@@ -31,6 +31,13 @@ public class Board extends Timestamped {
         this.username = requestDto.getUsername(); // BoardRequestDto에서 Username을 가져와서 필드(get) username에 값을 넣는다
         this.contents = requestDto.getContents(); // BoardRequestDto에서 contnents을 가져와서(get) 필드 contents에 값을 넣는다
         this.title = requestDto.getTitle(); // BoardRequestDto에서 title을 가져와서(get) 필드 title에 값을 넣는다
-        this.pass = requestDto.getPass(); // BoardRequestDto에서 pass을 가져와서(get) 필드 pass에 값을 넣는다
+        this.pass = requestDto.getPassword(); // BoardRequestDto에서 pass을 가져와서(get) 필드 pass에 값을 넣는다
+    }
+    public void updateBoard(BoardRequestDto requestDto){
+        this.username = requestDto.getUsername(); // BoardRequestDto에서 Username을 가져와서 필드(get) username에 값을 넣는다
+        this.contents = requestDto.getContents(); // BoardRequestDto에서 contnents을 가져와서(get) 필드 contents에 값을 넣는다
+        this.title = requestDto.getTitle(); // BoardRequestDto에서 title을 가져와서(get) 필드 title에 값을 넣는다
+        this.pass = requestDto.getPassword();
+
     }
 }

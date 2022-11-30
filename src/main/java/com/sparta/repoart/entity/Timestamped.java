@@ -1,5 +1,6 @@
 package com.sparta.repoart.entity;
 
+import com.sparta.repoart.dto.BoardRequestDto;
 import lombok.Getter;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -18,4 +19,5 @@ public class Timestamped {
 
     @LastModifiedDate
     private LocalDateTime modifiedAt;
+
 }
