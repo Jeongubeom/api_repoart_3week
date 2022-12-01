@@ -1,6 +1,8 @@
 package com.sparta.repoart.controller;
 
 import com.sparta.repoart.dto.BoardRequestDto;
+import com.sparta.repoart.dto.ResponseCreateDto;
+import com.sparta.repoart.dto.ResponseDeleteUpdateDto;
 import com.sparta.repoart.entity.Board;
 import com.sparta.repoart.service.BoardService;
 import lombok.RequiredArgsConstructor;
@@ -23,7 +25,7 @@ public class BoardController {
     }
 
     @PostMapping("/api/post/create")
-    public Board createBoard(@RequestBody BoardRequestDto requestDto) { //게시판 작성
+    public ResponseCreateDto createBoard(@RequestBody BoardRequestDto requestDto) { //게시판 작성
         return boardService.createBoard(requestDto);
     }
 
@@ -32,13 +34,14 @@ public class BoardController {
         return boardService.getBoard(id);*/ //선택 게시글 조회 일단보류
 
     @DeleteMapping("api/post/delete/{id}") // 게시글 삭제
-    public Long deleteBoard(@PathVariable Long id) {
+    public ResponseCreateDto deleteBoard(@PathVariable Long id) {
         return boardService.deleteBoard(id);
     }
 
     @PutMapping("/api/post/update/{id}") //게시글 수정!
-    public Long update(@PathVariable Long id, @RequestBody BoardRequestDto requestDto){
+    public ResponseCreateDto update(@PathVariable Long id, @RequestBody BoardRequestDto requestDto){
         return boardService.update(id, requestDto);
+        //return boardService.update(id, requestDto);
         }
     @GetMapping("/api/post/search/{id}") //선택한 게시글보기
     public Optional<Board> getBoardOne(@PathVariable Long id) {

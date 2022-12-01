@@ -1,6 +1,7 @@
 package com.sparta.repoart.entity;
 
 import com.sparta.repoart.dto.BoardRequestDto;
+import com.sparta.repoart.dto.ResponseCreateDto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -33,11 +34,11 @@ public class Board extends Timestamped {
         this.title = requestDto.getTitle(); // BoardRequestDto에서 title을 가져와서(get) 필드 title에 값을 넣는다
         this.pass = requestDto.getPassword(); // BoardRequestDto에서 pass을 가져와서(get) 필드 pass에 값을 넣는다
     }
-    public void updateBoard(BoardRequestDto requestDto){
-        this.username = requestDto.getUsername(); // BoardRequestDto에서 Username을 가져와서 필드(get) username에 값을 넣는다
-        this.contents = requestDto.getContents(); // BoardRequestDto에서 contnents을 가져와서(get) 필드 contents에 값을 넣는다
-        this.title = requestDto.getTitle(); // BoardRequestDto에서 title을 가져와서(get) 필드 title에 값을 넣는다
-        this.pass = requestDto.getPassword();
+    public void updateBoard(ResponseCreateDto responseCreateDto){
+        this.username = responseCreateDto.getName(); // BoardRequestDto에서 Username을 가져와서 필드(get) username에 값을 넣는다
+        this.contents = responseCreateDto.getContents(); // BoardRequestDto에서 contnents을 가져와서(get) 필드 contents에 값을 넣는다
+        this.title = responseCreateDto.getTitle(); // BoardRequestDto에서 title을 가져와서(get) 필드 title에 값을 넣는다
+        this.pass = responseCreateDto.getPassword();
 
     }
 }
